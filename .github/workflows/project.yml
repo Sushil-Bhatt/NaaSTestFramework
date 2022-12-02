@@ -10,7 +10,6 @@ on:
   
 jobs:
   build:
-    name: sonarqube
     runs-on: windows-latest
     steps:
       - uses: actions/checkout@v2
