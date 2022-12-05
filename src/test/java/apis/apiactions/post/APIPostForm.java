@@ -2,7 +2,7 @@ package apis.apiactions.post;
 
 public enum APIPostForm {
 
-    OPPORTUNTIES("/opportunities","src\\main\\resources\\test.json");
+    NOTIFICATION_MOCK_DATA("/opportunities/save","src\\main\\resources\\notificationData.json");
 
     private String endpoint;
     private String filePath;

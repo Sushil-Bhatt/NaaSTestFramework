@@ -1,0 +1,14 @@
+{
+  "opportunityId": "OP-23456989",
+  "opportunityNumber": "ON-9899",
+  "opportunityType": "Commercial",
+  "customerName": "HERO MOTORS",
+  "tenderPartner": "YCH1002",
+  "capacity": 20,
+  "tenderId": "T12004",
+  "opportunityOwner": "Jacob",
+  "customerVertical": "Automobile",
+  "customerCode": "DK00005982",
+  "customerValueProposition": "Efficiency",
+  "status": "Draft"
+}
