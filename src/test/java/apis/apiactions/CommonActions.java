@@ -29,7 +29,19 @@ public class CommonActions {
                 .getInstance(EnvironmentVariables.class);
 
         String baseUrlMockData = EnvironmentSpecificConfiguration.from(environmentVariables)
-                .getProperty("baseurlMockData");
+                .getProperty("baseurlOpportunity");
+
+        return new RequestSpecBuilder().setBaseUri(baseUrlMockData)
+                .setContentType("application/json")
+                .build();
+    }
+
+    public static RequestSpecification buildAuthorityReqSpec() {
+        EnvironmentVariables environmentVariables = Injectors.getInjector()
+                .getInstance(EnvironmentVariables.class);
+
+        String baseUrlMockData = EnvironmentSpecificConfiguration.from(environmentVariables)
+                .getProperty("baseurlAuthorityMatrix");
 
         return new RequestSpecBuilder().setBaseUri(baseUrlMockData)
                 .setContentType("application/json")

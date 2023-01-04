@@ -1,4 +1,5 @@
-Feature: Tender Status Component Verification
+Feature: DashBoard Component Verification
+  This feature is to test various components on DashBoard
 
   Background:
     Given User is on NaaS Dashboard
@@ -12,6 +13,7 @@ Feature: Tender Status Component Verification
     And User is presented with notification icon on the dashboard
     When User query the mock data for notification
     Then User should see a notification pushed popup
+    And User verifies the entry in Pending Actions table
     And User verifies it has a notification with notification count
     When User clicks on notification icon
     Then User should see the notifications

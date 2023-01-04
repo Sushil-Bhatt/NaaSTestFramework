@@ -10,6 +10,12 @@ import org.openqa.selenium.By;
 public class TenderStatusPage extends PageObject {
     private static final By TENDER_STATUS_TABLE = By.cssSelector("div[class^=sc-gqgnwQ]");
 
+    private static final By DASHBOARD_PAGE = By.xpath("//p[contains(text(),'Welcome,')]");
+
+    public void displayDashBoardPage(){
+        $(DASHBOARD_PAGE).isDisplayed();
+    }
+
     public void displayTenderStatusTable(){
         $(TENDER_STATUS_TABLE).isDisplayed();
     }

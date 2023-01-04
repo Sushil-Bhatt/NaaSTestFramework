@@ -32,6 +32,7 @@ public class TenderStatus {
     @Given("User is on NaaS Dashboard")
     public void user_is_on_naa_s_dashboard() {
         tenderStatus.open();
+        tenderStatus.displayDashBoardPage();
     }
 
     @And("User is presented with Tender Status component on the dashboard")
@@ -42,7 +43,7 @@ public class TenderStatus {
     @When("User Query the Tender Status API for {string} & {string}")
     public void user_query_the_tender_status_api(String s1, String s2) {
         getAction.getRequest_Response(OPPORTUNTIES_COUNT_BY_STATUS);
-        List<Map<String,String>> tenderStatusObject = getAction.readResponseData_TenderStatus(s1,s2);
+        List<Map<String,String>> tenderStatusObject = getAction.readResponseData_TenderStatus(s1,s2,"data");
         opportunities = commonActions.ObjectStateKeys(tenderStatusObject);
         opportunitiesValue = commonActions.ObjectStateValue(tenderStatusObject,opportunities);
     }
@@ -53,7 +54,6 @@ public class TenderStatus {
             int finalI = i;
             Serenity.reportThat("Tender Table Opportunity & its count should match with API data",
                     ()-> assertThat(tenderStatus.tenderTableObject(opportunities.get(finalI))).isEqualTo(opportunitiesValue.get(finalI)));
-            Serenity.recordReportData().withTitle("Opportunity status "+opportunities.get(finalI)).andContents("count is "+opportunitiesValue.get(finalI));
         }
     }
 
